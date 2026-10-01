@@ -118,7 +118,6 @@ class ModManager {
 
 		registerAux("noteSpawnTime");
 		registerAux("drawDistance");
-		registerAux("pathLines");
 		registerAux("disableDrawDistMult");
 		registerAux("flashR");
 		registerAux("flashG");
@@ -133,7 +132,15 @@ class ModManager {
 			registerAux('flash${i}R');
 			registerAux('flash${i}G');
 			registerAux('flash${i}B');
+			registerAux('arrowPaths${i}');
+			registerAux('arrowPaths${i}Width');
+			registerAux('arrowPaths${i}R');
+			registerAux('arrowPaths${i}G');
+			registerAux('arrowPaths${i}B');
 		}
+		registerAux("arrowPaths"); // Alpha of the path;
+		registerAux("arrowPathsWidth"); // How girthy you want the paths to be, multiplicative to the default of 4.
+		registerAux("arrowPathsAmplitude"); // For if you want path lines to be more jiggy.
 		
 
 		var toAlternate:Array<String> = ["transformX", "transformY", "transformZ"];
@@ -173,7 +180,7 @@ class ModManager {
 		setValue("scaleY", 1, mN);
 		setValue("darkSplashes", 1);
 
-		setValue("pathLines", 1, mN);
+		setValue("arrowPaths", 0, mN);
 
 		setValue("lookAheadTime", 2, mN);
 
@@ -196,6 +203,9 @@ class ModManager {
 			setValue('flash${i}R', 1, mN);
 			setValue('flash${i}G', 1, mN);
 			setValue('flash${i}B', 1, mN);
+			setValue('arrowPaths${i}R', 1, mN);
+			setValue('arrowPaths${i}G', 1, mN);
+			setValue('arrowPaths${i}B', 1, mN);
 		}
 
 		for (mod => data in defaultValues){

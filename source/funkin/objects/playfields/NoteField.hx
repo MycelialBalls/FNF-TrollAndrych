@@ -516,6 +516,7 @@ class NoteField extends FieldBase
 			appendUV(hold, uvData, false, sub);
 		}
 
+	
 		var shader = hold.shader != null ? hold.shader : defaultShader;
 		if (shader != hold.shader)
 			hold.shader = shader;
