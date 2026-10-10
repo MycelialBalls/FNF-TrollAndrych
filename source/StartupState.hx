@@ -1,5 +1,6 @@
 package;
 
+import foxlite.renderer.FoxRenderer;
 import flixel.FlxSprite;
 import funkin.objects.IndependentVideoSprite;
 import math.CoolMath;
@@ -157,6 +158,10 @@ class StartupState extends FlxTransitionableState
 				});
 				bullyIntro.load(Paths.video('loading'), [':no-audio']);
 				bullyIntro.play();
+			},
+			function() {
+				actionTxt.text += 'Done!\nInitialising Foxlite...';
+				FoxRenderer.initLibs();	
 			},
 			function() {
 				actionTxt.text += ' Done!';
