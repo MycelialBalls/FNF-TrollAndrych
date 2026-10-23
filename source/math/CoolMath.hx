@@ -64,6 +64,9 @@ class CoolMath/*Games*/{
 	}
 
 	public static function rotate(x:Float, y:Float, radians:Float, ?point:FlxPoint):FlxPoint {
+		if (x == 0 && y == 0 && radians == 0) {
+			return point ?? FlxPoint.weak();
+		}
 		var s:Float = Math.sin(radians);
 		var c:Float = Math.cos(radians);
 		// because HAXE* sucks
