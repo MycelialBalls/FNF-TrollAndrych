@@ -42,6 +42,7 @@ class OptionsSubstate extends MusicBeatSubstate
 		"video",
 		"controls",
 		"misc",
+		"mods",
 		'credits'
 	];
 
@@ -153,6 +154,9 @@ class OptionsSubstate extends MusicBeatSubstate
 					"svDetail"
 				]
 			]
+		],
+		"mods" => [
+			["Bub's Fruit Salad", []]
 		],
 		"controls" => [
 			[
@@ -600,12 +604,13 @@ class OptionsSubstate extends MusicBeatSubstate
 
 			text.setPosition(
 				button.x + 2,
-				button.y + ((button.height - text.height) / 2)
+				button.y + ((button.height - text.height) / 2) + 2
 			);
-			text.fieldWidth = button.width;
+			if (text.width >= button.width - 8)
+			text.scale.x = (button.width - 8) / (text.width);
 			text.updateHitbox();
 
-			lastX = button.x + button.width + 2;
+			lastX = button.x + button.width + 4;
 			add(button);
 			add(text);
 			buttons.push(button);
@@ -1821,7 +1826,7 @@ class TextFormats {
 		pixelPerfectRender: true,
 		antialiasing: false,
 	
-		size: 24,
+		size: 22,
 		color: 0xFFFFFFFF,
 		alignment: LEFT
 	};
@@ -1832,6 +1837,16 @@ class TextFormats {
 		antialiasing: false,
 	
 		size: 32,
+		color: 0xFFFFFFFF,
+		alignment: LEFT
+	};
+
+	public static final OPT_CATEGORY:FlxTextFormatData = {
+		font: "helveticaib.ttf",
+		pixelPerfectRender: true,
+		antialiasing: false,
+	
+		size: 30,
 		color: 0xFFFFFFFF,
 		alignment: LEFT
 	};

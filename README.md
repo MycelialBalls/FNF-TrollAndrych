@@ -58,4 +58,5 @@ This fork has some features that are different to the original or are completely
 - [Riconuts](https://github.com/riconuts) - Owner of original engine
 - [Nebula the Zorua](https://x.com/Nebula_Zorua) - Co-Owner of original engine
 - EliteMasterEric - Code i stole from him and ninjamuffin99 for v-slice bullshit lole!
+- Frakits - `FlxSpriteContainer` class.
 - Codename Engine Developers - Zoom Factor shit i stole lole!
