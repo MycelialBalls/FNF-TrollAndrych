@@ -1,6 +1,9 @@
 package funkin.objects;
 
-class FunkinContainer extends FlxSpriteContainer {
+// Credit goes to da frakits, order him pizza, and food, and a drink,.
+// Give him something awesome okay?
+
+class FlxSpriteContainer extends FlxSprite {
 	public var members:FlxTypedGroup<FlxSprite>;
 
 	public function new(x:Float, y:Float, width:Float, height:Float, ?members:Array<FlxSprite>) {
